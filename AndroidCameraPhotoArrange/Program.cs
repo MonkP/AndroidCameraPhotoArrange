@@ -11,6 +11,8 @@ namespace FileOrganizer
             if (args.Length == 0)
             {
                 Console.WriteLine("请将工作目录路径作为命令行参数传入");
+                Console.WriteLine("按回车退出。");
+                Console.ReadLine();
                 return;
             }
 
@@ -18,6 +20,8 @@ namespace FileOrganizer
             if (!Directory.Exists(workingDirectory))
             {
                 Console.WriteLine($"指定的目录不存在: {workingDirectory}");
+                Console.WriteLine("按回车退出。");
+                Console.ReadLine();
                 return;
             }
 
@@ -68,6 +72,8 @@ namespace FileOrganizer
             {
                 Console.WriteLine($"发生错误: {ex.Message}");
             }
+            Console.WriteLine("按回车退出。");
+            Console.ReadLine();
         }
 
         static DateTime? ParseUnderscoreFileName(string fileName)
